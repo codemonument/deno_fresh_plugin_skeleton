@@ -1,0 +1,1 @@
+# Fresh Plugin Skeleton
