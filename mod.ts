@@ -8,3 +8,4 @@
 
 export * from "./src/01_skeleton_plugin.ts";
 export * from "./src/01a_skeleton_plugin_w_zod.ts";
+export * from "./src/02_skeleton_plugin_w_handler.ts";

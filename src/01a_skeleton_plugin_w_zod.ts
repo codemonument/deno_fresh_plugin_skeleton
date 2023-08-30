@@ -4,8 +4,7 @@ import { z } from "./deps/zod.ts";
 const SkeletonOptions = z.object({
   isProd: z.boolean().optional().default(false),
 });
-
-export type SkeletonOptions = z.infer<typeof SkeletonOptions>;
+type SkeletonOptions = z.infer<typeof SkeletonOptions>;
 
 export function SkeletonPluginWithZodOptions(
   rawOptions: Partial<SkeletonOptions>,

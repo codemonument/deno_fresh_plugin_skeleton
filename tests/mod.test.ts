@@ -5,5 +5,6 @@ describe(`mod.ts`, () => {
   it(`should export correct objects and types`, () => {
     assert(mod.SkeletonPlugin);
     assert(mod.SkeletonPluginWithZodOptions);
+    assert(mod.SkeletonPluginWithHandler);
   });
 });
