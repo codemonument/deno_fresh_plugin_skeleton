@@ -1,3 +1,3 @@
 # Fresh Plugin Skeleton
 
-![](./assets/banner.png)
+![](./assets/banner_new.png)
