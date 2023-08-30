@@ -1,24 +1,11 @@
-import { Plugin } from "./deps/fresh.ts";
-import { z } from "./deps/zod.ts";
-import { PluginRoute } from "https://deno.land/x/fresh@1.3.1/src/server/types.ts";
+import { HandlerContext, Plugin, PluginRoute } from "./deps/fresh.ts";
 
-const SkeletonOptions = z.object({});
-type SkeletonOptions = z.infer<typeof SkeletonOptions>;
-
-export function SkeletonPluginWithHandler(
-  rawOptions: Partial<SkeletonOptions>,
-) {
-  // validate your options
-  // Throws when parsing fails
-  const options = SkeletonOptions.parse(
-    rawOptions,
-  );
-
+export function SkeletonPluginWithHandler() {
   const myHandlerRoute = {
     path: "/handler", // the plugin route will be attached to /handler in the host Fresh app.
-    handler: async (
-      req: Request,
-      ctx: HandlerContext,
+    handler: (
+      _req: Request,
+      _ctx: HandlerContext,
     ) => {
       // Do some things in your handler and return a response
       // This will be a GET handler
