@@ -4,7 +4,7 @@ export function SkeletonPluginWithComponent() {
 	const myComponentRoute = {
 		path: '/component', // the plugin route will be attached to /component in the host Fresh app.
 
-		// TODO: How to make returning components in a plugin work?!?
+		// TODO: Works when running, but Typescript can't detect the jsx properly
 		component: () => {
 			return <h1>Plugin with page component works!</h1>;
 		},

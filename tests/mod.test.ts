@@ -6,5 +6,7 @@ describe(`mod.ts`, () => {
     assert(mod.SkeletonPlugin);
     assert(mod.SkeletonPluginWithZodOptions);
     assert(mod.SkeletonPluginWithHandler);
+    assert(mod.SkeletonPluginWithComponent);
+    assert(mod.SkeletonPluginWithMiddleware);
   });
 });

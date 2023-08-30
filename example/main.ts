@@ -7,7 +7,13 @@
 import { FreshOpenProps } from "fresh_openprops";
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
-import { SkeletonPlugin, SkeletonPluginWithHandler, SkeletonPluginWithZodOptions } from "@mod";
+import {
+  SkeletonPlugin,
+  SkeletonPluginWithComponent,
+  SkeletonPluginWithHandler,
+  SkeletonPluginWithMiddleware,
+  SkeletonPluginWithZodOptions,
+} from "@mod";
 
 await start(manifest, {
   plugins: [
@@ -19,6 +25,8 @@ await start(manifest, {
     }),
     SkeletonPlugin({ option1: true, option2: "" }),
     SkeletonPluginWithZodOptions({ isProd: true }),
-    SkeletonPluginWithHandler({})
+    SkeletonPluginWithHandler(),
+    SkeletonPluginWithComponent(),
+    SkeletonPluginWithMiddleware(),
   ],
 });
