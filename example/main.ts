@@ -7,6 +7,7 @@
 import { FreshOpenProps } from "fresh_openprops";
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
+import { SkeletonPlugin, SkeletonPluginWithZodOptions } from "@mod";
 
 await start(manifest, {
   plugins: [
@@ -16,5 +17,7 @@ await start(manifest, {
       cssInputPath: "example/css",
       postcssModuleBaseDir: "example/css_deps",
     }),
+    SkeletonPlugin({ option1: true, option2: "" }),
+    SkeletonPluginWithZodOptions({ isProd: true }),
   ],
 });

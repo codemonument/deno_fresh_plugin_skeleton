@@ -8,6 +8,7 @@
     "jsxImportSource": "preact"
   },
   "imports": {
+    "@mod": "../mod.ts",
     "$std/": "https://deno.land/std@0.200.0/",
     "$fresh/": "https://deno.land/x/fresh@1.4.2/",
     "preact": "https://esm.sh/preact@10.17.1",

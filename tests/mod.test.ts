@@ -3,6 +3,7 @@ import * as mod from "@mod";
 
 describe(`mod.ts`, () => {
   it(`should export correct objects and types`, () => {
-    assert(mod.cssCache);
+    assert(mod.SkeletonPlugin);
+    assert(mod.SkeletonPluginWithZodOptions);
   });
 });
