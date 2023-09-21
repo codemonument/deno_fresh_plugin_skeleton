@@ -5,13 +5,45 @@
  */
 {
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+
+    // jsx options, mainly relevant for examples but also,
+    // if you want to build fresh components into a plugin
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   },
-  
-  // Docs for Deno Tasks: https://deno.land/manual@v1.27.1/tools/task_runner
+
+  // Docs for Deno Tasks: https://docs.deno.com/runtime/manual/tools/task_runner
   "tasks": {
+    // Tasks for running example setup
     "start": "deno task example",
     "example": "deno run -A --watch=example/static/,example/routes/,example/css example/dev.ts",
-    "download-openprops": "deno run --allow-net --allow-write --allow-read ./download-openprops-cli.ts --outPath example/css_deps/open-props"
+    "download-openprops": "deno run --allow-net --allow-write --allow-read ./download-openprops-cli.ts --outPath example/css_deps/open-props",
+    // Maintenance scripts
+    "refresh-lsp": "deno check ./mod.ts"
+  },
+
+  // Settings for running /example
+  // Currently needed bc. fresh only loads top-level deno.json into vscode extension
+  // https://github.com/denoland/fresh/issues/1555#issuecomment-1727298447
+  "lock": false,
+  "imports": {
+    "@mod": "./mod.ts",
+    "$std/": "https://deno.land/std@0.200.0/",
+    "$fresh/": "https://deno.land/x/fresh@1.4.2/",
+    "preact": "https://esm.sh/preact@10.17.1",
+    "preact/": "https://esm.sh/preact@10.17.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.2.1",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.4.0",
+    "fresh_openprops": "https://deno.land/x/fresh_openprops@2.0.0/mod.ts"
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
   }
 }
