@@ -26,6 +26,11 @@
   // Settings for running /example
   // Currently needed bc. fresh only loads top-level deno.json into vscode extension
   // https://github.com/denoland/fresh/issues/1555#issuecomment-1727298447
+  //
+  // IMPORTANT!!!
+  // -----------
+  //  Only use these imports for testing and example dependencies, NOT INSIDE ANYTHING EXPORTED BY mod.ts!!!
+  // These imports will not be resolved when mod.ts is used as library from outside!
   "lock": false,
   "imports": {
     "@mod": "./mod.ts",
